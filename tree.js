@@ -26,10 +26,10 @@ var possibleMoves = [
 // move tree
 class MoveTree {
 	constructor(givenPos, maxDepth) {
-		this.root = new Move(givenPos[0], givenPos[1], 1, [], null);
-		this.buildTheTree(this.root, maxDepth);
 		this.moveNodes = 1;
 		this.maxDepth = maxDepth;
+		this.root = new Move(givenPos[0], givenPos[1], 1, [], null);
+		this.buildTheTree(this.root, maxDepth);
 	}
 
 	// build all possibleMoves from a givenPos
@@ -41,9 +41,9 @@ class MoveTree {
 			let x = givenPos[0] + possibleMove.x;
 			let y = givenPos[1] + possibleMove.y;
 			if (x > 7 || x < 0 || y > 7 || y < 0) continue;
-			++this.moveNodes;
 			let move = new Move(x, y, depth, [], parent);
 			positions.push(move);
+			this.moveNodes++;
 		}
 
 		return positions;
@@ -80,8 +80,8 @@ class MoveTree {
 module.exports = MoveTree;
 
 // tests
-let tree = new MoveTree([3, 3], 1);
-tree.root.children.forEach(child => {
-	console.log(child);
-});
+let tree = new MoveTree([3, 3], 2);
+// tree.root.children.forEach(child => {
+// 	console.log(child);
+// });
 tree.inspect();
