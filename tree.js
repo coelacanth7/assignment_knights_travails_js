@@ -28,7 +28,7 @@ class MoveTree {
 	constructor(givenPos, maxDepth) {
 		this.moveNodes = 1;
 		this.maxDepth = maxDepth;
-		this.root = new Move(givenPos[0], givenPos[1], 1, [], null);
+		this.root = new Move(givenPos[0], givenPos[1], 0, [], null);
 		this.buildTheTree(this.root, maxDepth);
 	}
 
