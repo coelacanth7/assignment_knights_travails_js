@@ -53,14 +53,14 @@ class KnightSearcher {
 }
 
 const searcher = new KnightSearcher(tree);
-// console.log(searcher.bfsFor([0, 0]));
-// console.log(searcher.dfsFor([0, 0]));
+console.log(searcher.bfsFor([0, 0]));
+console.log(searcher.dfsFor([0, 0]));
 
 // benchmark tests
-function Benchmark() {
-	for (var i = 0; i < 100000; i++) {
-		// searcher.bfsFor([0, i % 7]); // [Finished in 4.751s] [Finished in 5.463s]
-		// searcher.dfsFor([0, i % 7]); // [Finished in 18.774s] [Finished in 18.811s]
-	}
-}
-Benchmark();
+// function Benchmark() {
+// 	for (var i = 0; i < 100000; i++) {
+// 		// searcher.bfsFor([0, i % 7]); // [Finished in 4.751s] [Finished in 5.463s]
+// 		// searcher.dfsFor([0, i % 7]); // [Finished in 18.774s] [Finished in 18.811s]
+// 	}
+// }
+// Benchmark();
